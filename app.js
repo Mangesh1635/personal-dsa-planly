@@ -1,0 +1,11 @@
+require('dotenv').config();
+const express = require('express');
+const path = require('path');
+const mongoose = require('mongoose');
+const taskRoutes = require('./routes/tasks');
+const { seedIfEmpty } = require('./config/seed');
+const app = express();
+app.set('view engine','ejs'); app.set('views',path.join(__dirname,'views'));
+app.use(express.urlencoded({extended:true})); app.use(express.json()); app.use(express.static(path.join(__dirname,'public'))); app.use('/',taskRoutes);
+const PORT=process.env.PORT||3000;
+(async()=>{try{await mongoose.connect(process.env.MONGO_URI||'mongodb://127.0.0.1:27017/personal_task_manager'); await seedIfEmpty(); app.listen(PORT,()=>console.log(`http://localhost:${PORT}`));}catch(e){console.error(e.message);process.exit(1)}})();

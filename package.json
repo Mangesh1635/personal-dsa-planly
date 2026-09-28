@@ -1,0 +1,17 @@
+{
+  "name": "personal-sprint-task-manager",
+  "version": "1.0.0",
+  "description": "Personal Sprint-Day-Task manager with timers",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js",
+    "seed": "node config/seed.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5"
+  }
+}

@@ -1,0 +1,2 @@
+const mongoose=require('mongoose');
+module.exports=mongoose.model('Task',new mongoose.Schema({title:{type:String,required:true},sprint:{type:Number,required:true},day:{type:Number,required:true},estimatedMinutes:{type:Number,default:0},status:{type:String,enum:['not_started','in_progress','completed'],default:'not_started'},timeSpentSeconds:{type:Number,default:0},isTimerRunning:{type:Boolean,default:false},timerStartedAt:{type:Date,default:null},completedAt:{type:Date,default:null},favorite:{type:Boolean,default:false}},{timestamps:true}));
