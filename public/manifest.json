@@ -1,0 +1,17 @@
+{
+  "name": "DSA Planly",
+  "short_name": "Planly",
+  "description": "Personal DSA and interview preparation task manager",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon_1.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
